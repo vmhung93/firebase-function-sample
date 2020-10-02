@@ -1,0 +1,12 @@
+{
+  "admin": {
+    "email": "admin@mail.com",
+    "displayName": "SysAdmin",
+    "password": "111111"
+  },
+  "cors": {
+    "allowed_origins": [
+      "http://localhost:3000"
+    ]
+  }
+}
