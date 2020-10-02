@@ -15,15 +15,26 @@ For more information about to write and deploy function, you can reference this 
 
 ## Getting Started
 
-### Create a Firebase project on the [Firebase Console](https://console.firebase.google.com)
+### 1. Create a Firebase project on the [Firebase Console](https://console.firebase.google.com)
 
-### Enable the authentication method
+### 2. Enable the authentication method
 In this project, I used email and password authentication. You can enable the method that you want to use by going to the **Authentication** section in the **SIGN-IN METHOD** tab.
 
-### Add the Firebase Admin SDK to your server
+### 3. Add the Firebase Admin SDK to your server
 To add the Firebase Admin SDK to project please follow the instructions in this link: https://firebase.google.com/docs/admin/setup
 
 **Note**: In this project, to authorize via service account, I explicitly passed the path to the service account key in code. You can find that config in firebase.admin.js.
+
+### 4. Seed sysadmin account
+You need to be authenticated/authorized before access APIs. When you start the project, you should call API to create sysadmin firsts. The sysadmin will use email and password for authentication.
+
+Email: admin@mail.com
+
+Password: 111111
+
+To get a bearer token easily, you can use this example https://github.com/firebase/quickstart-js/blob/master/auth/email-password.html.
+
+Change your Firebase config and enjoy.
 
 ## API list
 Here is the list of APIs
@@ -54,19 +65,19 @@ Here is the list of APIs
 
 Please follow some steps below to setup debugging in VS Code
 
-### Install the firebase-tools package
+### 1. Install the firebase-tools package
 
 We need to install the firebase-tools package:
 
 	npm install -g firebase-tools
 
-### Running Firebase emulator
+### 2. Running Firebase emulator
 
 To run Firebase emulator, we use command below:
 
 	firebase emulators:start
 
-### Debugging configuration
+### 3. Debugging configuration
 
 Click on the run/debug icon in VS Code on the left side. Then click the gear to edit the launch.json file.
 
@@ -82,7 +93,7 @@ Click on the run/debug icon in VS Code on the left side. Then click the gear to 
 		]
 	}
 
-### Starting debugging
+### 4. Starting debugging
 
 When we start debugging, a new command panel will be displayed. We need to pick functionEmulatorRuntime process.
 
@@ -109,13 +120,13 @@ How to fix it? We will run the app directly without Firebase function emulator. 
 
 ## Deployment
 
-### Login to Firebase account
+### 1. Login to Firebase account
 
 Log into Firebase using your Google account by running the following command:
 
 	firebase login
 
-### Use project aliases
+### 2. Use project aliases
 
 As you can see in `.firebaserc`, I currently have two project aliases (one for development and the other for production).
 
@@ -127,7 +138,7 @@ The CLI uses this project as the currently "active project"
 
 	firebase use PROJECT_ID|ALIAS
 
-#### Apply production configuration
+### 3. Apply production configuration
 
 Before you deploy to production, don't forget to apply the production configuration.
 
@@ -142,7 +153,7 @@ Before you deploy to production, don't forget to apply the production configurat
 
 Reference link: https://firebase.google.com/pricing
 
-#### Deploy to a Firebase project
+### 4. Deploy to a Firebase project
 
 When things are looking good, run `firebase deploy` to upload the latest snapshot to our servers.
 
@@ -153,3 +164,4 @@ https://firebase.google.com/docs/cli
 https://firebase.google.com/docs/hosting/quickstart
 
 https://firebase.google.com/docs/hosting/serverless-overview
+
