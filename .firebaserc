@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "develop": "PROJECT_ID|ALIAS",
+    "production": "PROJECT_ID|ALIAS"
+  }
+}
